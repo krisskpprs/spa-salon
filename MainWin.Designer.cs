@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.voiti = new System.Windows.Forms.Button();
+            this.btnvoiti = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.textlogin = new System.Windows.Forms.TextBox();
             this.textpassword = new System.Windows.Forms.TextBox();
@@ -36,18 +36,20 @@
             this.password = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.zabililogin = new System.Windows.Forms.LinkLabel();
-            this.registracia = new System.Windows.Forms.LinkLabel();
+            this.registration = new System.Windows.Forms.LinkLabel();
+            this.lblMessage = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // voiti
+            // btnvoiti
             // 
-            this.voiti.ForeColor = System.Drawing.Color.Black;
-            this.voiti.Location = new System.Drawing.Point(354, 291);
-            this.voiti.Name = "voiti";
-            this.voiti.Size = new System.Drawing.Size(96, 27);
-            this.voiti.TabIndex = 0;
-            this.voiti.Text = "Войти";
-            this.voiti.UseVisualStyleBackColor = true;
+            this.btnvoiti.ForeColor = System.Drawing.Color.Black;
+            this.btnvoiti.Location = new System.Drawing.Point(354, 291);
+            this.btnvoiti.Name = "btnvoiti";
+            this.btnvoiti.Size = new System.Drawing.Size(96, 27);
+            this.btnvoiti.TabIndex = 0;
+            this.btnvoiti.Text = "Войти";
+            this.btnvoiti.UseVisualStyleBackColor = true;
+            this.btnvoiti.Click += new System.EventHandler(this.btnvoiti_Click);
             // 
             // label1
             // 
@@ -116,16 +118,26 @@
             this.zabililogin.TabStop = true;
             this.zabililogin.Text = "Забыли пароль?";
             // 
-            // registracia
+            // registration
             // 
-            this.registracia.AutoSize = true;
-            this.registracia.LinkColor = System.Drawing.Color.Black;
-            this.registracia.Location = new System.Drawing.Point(491, 323);
-            this.registracia.Name = "registracia";
-            this.registracia.Size = new System.Drawing.Size(72, 13);
-            this.registracia.TabIndex = 9;
-            this.registracia.TabStop = true;
-            this.registracia.Text = "Регистрация";
+            this.registration.AutoSize = true;
+            this.registration.LinkColor = System.Drawing.Color.Black;
+            this.registration.Location = new System.Drawing.Point(491, 323);
+            this.registration.Name = "registration";
+            this.registration.Size = new System.Drawing.Size(72, 13);
+            this.registration.TabIndex = 9;
+            this.registration.TabStop = true;
+            this.registration.Text = "Регистрация";
+            this.registration.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.registration_LinkClicked);
+            // 
+            // lblMessage
+            // 
+            this.lblMessage.AutoSize = true;
+            this.lblMessage.Location = new System.Drawing.Point(574, 230);
+            this.lblMessage.Name = "lblMessage";
+            this.lblMessage.Size = new System.Drawing.Size(0, 13);
+            this.lblMessage.TabIndex = 10;
+            this.lblMessage.Click += new System.EventHandler(this.label2_Click_1);
             // 
             // MainWin
             // 
@@ -133,7 +145,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.IndianRed;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.registracia);
+            this.Controls.Add(this.lblMessage);
+            this.Controls.Add(this.registration);
             this.Controls.Add(this.zabililogin);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.password);
@@ -141,9 +154,10 @@
             this.Controls.Add(this.textpassword);
             this.Controls.Add(this.textlogin);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.voiti);
+            this.Controls.Add(this.btnvoiti);
             this.Name = "MainWin";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.MainWin_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -151,7 +165,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button voiti;
+        private System.Windows.Forms.Button btnvoiti;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textlogin;
         private System.Windows.Forms.TextBox textpassword;
@@ -159,7 +173,8 @@
         private System.Windows.Forms.Label password;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.LinkLabel zabililogin;
-        private System.Windows.Forms.LinkLabel registracia;
+        private System.Windows.Forms.LinkLabel registration;
+        private System.Windows.Forms.Label lblMessage;
     }
 }
 
