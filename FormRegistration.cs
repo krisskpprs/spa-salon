@@ -51,6 +51,7 @@ namespace spa_salon
             {
                 MessageBox.Show("Номер телефона должен содержать только цифры.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
+
             }
             Form FormAvtoriz = new Form();
             FormAvtoriz.Show();
