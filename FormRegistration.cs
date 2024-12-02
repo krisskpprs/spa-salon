@@ -53,8 +53,9 @@ namespace spa_salon
                 return;
 
             }
-            Form FormAvtoriz = new Form();
-            FormAvtoriz.Show();
+            
+            FormUser formUser = new FormUser();
+            formUser.Show();
             this.Hide();
         }
     }

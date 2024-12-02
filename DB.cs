@@ -9,7 +9,7 @@ namespace spa_salon
 {
     internal class DB
     {
-        SqlConnection SqlConnection=new SqlConnection(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=SPA-salonn;Integrated Security=True;");
+        SqlConnection SqlConnection=new SqlConnection(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=SPA;Integrated Security=True;");
 
         public void openConnection()
         {

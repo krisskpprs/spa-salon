@@ -16,7 +16,7 @@ namespace spa_salon
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainWin());
+            Application.Run(new FormAdmin());
         }
     }
 }

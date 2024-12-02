@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace spa_salon
 {
-    public partial class FormAvtoriz : Form
+    public partial class FormUser : Form
     {
-        public FormAvtoriz()
+        public FormUser()
         {
             InitializeComponent();
         }

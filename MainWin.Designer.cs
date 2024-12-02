@@ -35,7 +35,6 @@
             this.login = new System.Windows.Forms.Label();
             this.password = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.zabililogin = new System.Windows.Forms.LinkLabel();
             this.registration = new System.Windows.Forms.LinkLabel();
             this.lblMessage = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -107,22 +106,11 @@
             this.label4.TabIndex = 7;
             this.label4.Text = "Авторизация";
             // 
-            // zabililogin
-            // 
-            this.zabililogin.AutoSize = true;
-            this.zabililogin.LinkColor = System.Drawing.Color.Black;
-            this.zabililogin.Location = new System.Drawing.Point(228, 323);
-            this.zabililogin.Name = "zabililogin";
-            this.zabililogin.Size = new System.Drawing.Size(91, 13);
-            this.zabililogin.TabIndex = 8;
-            this.zabililogin.TabStop = true;
-            this.zabililogin.Text = "Забыли пароль?";
-            // 
             // registration
             // 
             this.registration.AutoSize = true;
             this.registration.LinkColor = System.Drawing.Color.Black;
-            this.registration.Location = new System.Drawing.Point(491, 323);
+            this.registration.Location = new System.Drawing.Point(366, 334);
             this.registration.Name = "registration";
             this.registration.Size = new System.Drawing.Size(72, 13);
             this.registration.TabIndex = 9;
@@ -147,7 +135,6 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.lblMessage);
             this.Controls.Add(this.registration);
-            this.Controls.Add(this.zabililogin);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.password);
             this.Controls.Add(this.login);
@@ -172,7 +159,6 @@
         private System.Windows.Forms.Label login;
         private System.Windows.Forms.Label password;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.LinkLabel zabililogin;
         private System.Windows.Forms.LinkLabel registration;
         private System.Windows.Forms.Label lblMessage;
     }
