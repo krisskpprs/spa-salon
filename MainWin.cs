@@ -59,9 +59,10 @@ namespace spa_salon
 
             //        lblMessage.Text = "Login successful!";
 
-            //        FormAdmin FormAdmin = new FormAdmin();
-            //        FormAdmin.Show();
-            //        this.Hide();
+            //FormAdmin FormAdmin = new FormAdmin();
+            //FormAdmin.Show();
+            //this.Hide();
+
             //    }
             //    else
             //    {
@@ -107,5 +108,7 @@ namespace spa_salon
             this.registration.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.registration_LinkClicked);
 
         }
+
+       
     }
 }

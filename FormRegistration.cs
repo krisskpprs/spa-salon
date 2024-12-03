@@ -2,61 +2,78 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace spa_salon
 {
     public partial class FormRegistration : Form
     {
+        DB DB = new DB();
         public FormRegistration()
         {
             InitializeComponent();
+            StartPosition = FormStartPosition.CenterScreen;
         }
 
-        private void label1_Click(object sender, EventArgs e)
+
+        private void FormRegistration_Load(object sender, EventArgs e)
         {
+            textPassword.PasswordChar = '*';
+            textLogin.MaxLength = 50;
+            textPassword.MaxLength = 50;
 
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private Boolean check_client(string Login)
         {
+            SqlDataAdapter adapter = new SqlDataAdapter();
+            DataTable table = new DataTable();
 
-        }
+            SqlCommand command = new SqlCommand($"select Login from [Clients] where Login = '{Login}'", DB.GetSqlConnection());
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            string FirstName = textFirstName.Text;
-            string LastName = textLastName.Text;
-            string DataOfBirth = textDataOfBirth.Text;
-            string Phone = textPhone.Text;
-            string Login = textLogin.Text;
-            string Password = textPassword.Text;
+            adapter.SelectCommand = command;
+            adapter.Fill(table);
 
-            if (string.IsNullOrEmpty(FirstName) ||
-                string.IsNullOrEmpty(LastName) ||
-                string.IsNullOrEmpty(DataOfBirth) ||
-                string.IsNullOrEmpty(Phone) ||
-                string.IsNullOrEmpty(Login) ||
-                string.IsNullOrEmpty(Password))
+            if (table.Rows.Count > 0)
             {
-                MessageBox.Show("Пожалуйста, заполните все поля.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return; 
+                MessageBox.Show("Пользователь уже существует");
+                return true;
             }
-
-            if (!Phone.All(char.IsDigit))
-            {
-                MessageBox.Show("Номер телефона должен содержать только цифры.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-
-            }
-            
-            FormUser formUser = new FormUser();
-            formUser.Show();
-            this.Hide();
+            else return false;
         }
+
+        private void button_zareg_Click(object sender, EventArgs e)
+        {
+            var FirstName = textFirstName.Text;
+            var LastName = textLastName.Text;
+            var DataOfBirth = textDataOfBirth.Text;
+            var Phone = textPhone.Text;
+            var Login = textLogin.Text;
+            var Password = textPassword.Text;
+
+            if (check_client(Login) == false)
+            {
+                SqlCommand command = new SqlCommand($"insert into [Clients](FirstName, LastName, Login, Password) values('{FirstName}', '{LastName}', '{Login}', '{Password}')", DB.GetSqlConnection());
+                DB.openConnection();
+
+                if (command.ExecuteNonQuery() == 1)
+                {
+                    MessageBox.Show("Вы вошли в аккаунт!");
+                    FormAdmin formAdmin  = new FormAdmin();
+                    this.Hide();
+                    formAdmin.ShowDialog();
+                }
+                else MessageBox.Show("Такого аккаунта нет!");
+            }
+            DB.closeConnection();
+        }
+
+      
     }
 }

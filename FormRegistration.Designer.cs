@@ -41,24 +41,27 @@
             this.textPhone = new System.Windows.Forms.TextBox();
             this.textLogin = new System.Windows.Forms.TextBox();
             this.textPassword = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.button_zareg = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Yu Gothic", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(211)))), ((int)(((byte)(166)))));
+            this.label1.Font = new System.Drawing.Font("Yu Gothic Medium", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label1.Location = new System.Drawing.Point(141, 46);
             this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(336, 38);
+            this.label1.Size = new System.Drawing.Size(347, 38);
             this.label1.TabIndex = 0;
             this.label1.Text = "РЕГИСТРАЦИЯ";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // FirstName
             // 
             this.FirstName.AutoSize = true;
+            this.FirstName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(211)))), ((int)(((byte)(166)))));
             this.FirstName.Font = new System.Drawing.Font("Perpetua Titling MT", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FirstName.Location = new System.Drawing.Point(102, 122);
             this.FirstName.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
@@ -70,6 +73,7 @@
             // LastName
             // 
             this.LastName.AutoSize = true;
+            this.LastName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(211)))), ((int)(((byte)(166)))));
             this.LastName.Font = new System.Drawing.Font("Perpetua Titling MT", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LastName.Location = new System.Drawing.Point(102, 161);
             this.LastName.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
@@ -81,6 +85,7 @@
             // Phone
             // 
             this.Phone.AutoSize = true;
+            this.Phone.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(211)))), ((int)(((byte)(166)))));
             this.Phone.Location = new System.Drawing.Point(102, 247);
             this.Phone.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.Phone.Name = "Phone";
@@ -91,6 +96,7 @@
             // Login
             // 
             this.Login.AutoSize = true;
+            this.Login.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(211)))), ((int)(((byte)(166)))));
             this.Login.Location = new System.Drawing.Point(102, 294);
             this.Login.Name = "Login";
             this.Login.Size = new System.Drawing.Size(59, 18);
@@ -100,6 +106,7 @@
             // Password
             // 
             this.Password.AutoSize = true;
+            this.Password.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(211)))), ((int)(((byte)(166)))));
             this.Password.Location = new System.Drawing.Point(103, 337);
             this.Password.Name = "Password";
             this.Password.Size = new System.Drawing.Size(99, 18);
@@ -109,6 +116,7 @@
             // DataOfBirth
             // 
             this.DataOfBirth.AutoSize = true;
+            this.DataOfBirth.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(211)))), ((int)(((byte)(166)))));
             this.DataOfBirth.Location = new System.Drawing.Point(102, 204);
             this.DataOfBirth.Name = "DataOfBirth";
             this.DataOfBirth.Size = new System.Drawing.Size(126, 18);
@@ -117,16 +125,15 @@
             // 
             // textFirstName
             // 
-            this.textFirstName.BackColor = System.Drawing.Color.MistyRose;
+            this.textFirstName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(239)))));
             this.textFirstName.Location = new System.Drawing.Point(256, 119);
             this.textFirstName.Name = "textFirstName";
             this.textFirstName.Size = new System.Drawing.Size(238, 26);
             this.textFirstName.TabIndex = 7;
-            this.textFirstName.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // textLastName
             // 
-            this.textLastName.BackColor = System.Drawing.Color.MistyRose;
+            this.textLastName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(239)))));
             this.textLastName.Location = new System.Drawing.Point(256, 158);
             this.textLastName.Name = "textLastName";
             this.textLastName.Size = new System.Drawing.Size(238, 26);
@@ -134,7 +141,7 @@
             // 
             // textDataOfBirth
             // 
-            this.textDataOfBirth.BackColor = System.Drawing.Color.MistyRose;
+            this.textDataOfBirth.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(239)))));
             this.textDataOfBirth.Location = new System.Drawing.Point(256, 204);
             this.textDataOfBirth.Name = "textDataOfBirth";
             this.textDataOfBirth.Size = new System.Drawing.Size(238, 26);
@@ -142,7 +149,7 @@
             // 
             // textPhone
             // 
-            this.textPhone.BackColor = System.Drawing.Color.MistyRose;
+            this.textPhone.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(239)))));
             this.textPhone.Location = new System.Drawing.Point(256, 244);
             this.textPhone.Name = "textPhone";
             this.textPhone.Size = new System.Drawing.Size(238, 26);
@@ -150,7 +157,7 @@
             // 
             // textLogin
             // 
-            this.textLogin.BackColor = System.Drawing.Color.MistyRose;
+            this.textLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(239)))));
             this.textLogin.Location = new System.Drawing.Point(256, 286);
             this.textLogin.Name = "textLogin";
             this.textLogin.Size = new System.Drawing.Size(238, 26);
@@ -158,30 +165,39 @@
             // 
             // textPassword
             // 
-            this.textPassword.BackColor = System.Drawing.Color.MistyRose;
+            this.textPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(239)))));
             this.textPassword.Location = new System.Drawing.Point(256, 337);
             this.textPassword.Name = "textPassword";
             this.textPassword.Size = new System.Drawing.Size(238, 26);
             this.textPassword.TabIndex = 12;
             // 
-            // button1
+            // button_zareg
             // 
-            this.button1.Font = new System.Drawing.Font("Perpetua Titling MT", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(240, 403);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(141, 37);
-            this.button1.TabIndex = 13;
-            this.button1.Text = "Зарегестрироваться";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button_zareg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(157)))), ((int)(((byte)(119)))));
+            this.button_zareg.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button_zareg.Location = new System.Drawing.Point(206, 401);
+            this.button_zareg.Name = "button_zareg";
+            this.button_zareg.Size = new System.Drawing.Size(209, 33);
+            this.button_zareg.TabIndex = 13;
+            this.button_zareg.Text = "Зарегестрироваться";
+            this.button_zareg.UseVisualStyleBackColor = false;
+            this.button_zareg.Click += new System.EventHandler(this.button_zareg_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(211)))), ((int)(((byte)(166)))));
+            this.panel1.Location = new System.Drawing.Point(53, 22);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(510, 435);
+            this.panel1.TabIndex = 14;
             // 
             // FormRegistration
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.IndianRed;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(157)))), ((int)(((byte)(119)))));
             this.ClientSize = new System.Drawing.Size(612, 496);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.button_zareg);
             this.Controls.Add(this.textPassword);
             this.Controls.Add(this.textLogin);
             this.Controls.Add(this.textPhone);
@@ -195,10 +211,12 @@
             this.Controls.Add(this.LastName);
             this.Controls.Add(this.FirstName);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Perpetua Titling MT", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
             this.Name = "FormRegistration";
             this.Text = "Registration";
+            this.Load += new System.EventHandler(this.FormRegistration_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -219,6 +237,7 @@
         private System.Windows.Forms.TextBox textPhone;
         private System.Windows.Forms.TextBox textLogin;
         private System.Windows.Forms.TextBox textPassword;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button_zareg;
+        private System.Windows.Forms.Panel panel1;
     }
 }
