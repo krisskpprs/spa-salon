@@ -56,6 +56,7 @@ namespace spa_salon
             var Phone = textPhone.Text;
             var Login = textLogin.Text;
             var Password = textPassword.Text;
+            int roleId = 2;
 
             if (check_client(Login) == false)
             {
@@ -65,7 +66,7 @@ namespace spa_salon
                 if (command.ExecuteNonQuery() == 1)
                 {
                     MessageBox.Show("Вы вошли в аккаунт!");
-                    FormAdmin formAdmin  = new FormAdmin();
+                    FormAdmin formAdmin  = new FormAdmin(roleId);
                     this.Hide();
                     formAdmin.ShowDialog();
                 }

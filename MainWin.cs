@@ -14,6 +14,7 @@ namespace spa_salon
     public partial class MainWin : Form
     {
         DB DB = new DB();
+        public int roleId;
 
         public MainWin()
         {
@@ -74,11 +75,12 @@ namespace spa_salon
 
             var loginUser = textlogin.Text;
             var loginPassword = textpassword.Text;
+         
 
             SqlDataAdapter adapter = new SqlDataAdapter();
             DataTable table = new DataTable();
 
-            string querystring = $"select ClientsID, Login, Password from Clients where Login = '{loginUser}' and Password = '{loginPassword}'";
+            string querystring = $"select ClientsID, Client_status_ID, Login, Password from Clients where Login = '{loginUser}' and Password = '{loginPassword}'";
 
             SqlCommand command = new SqlCommand(querystring, DB.GetSqlConnection());
 
@@ -87,11 +89,18 @@ namespace spa_salon
 
             if (table.Rows.Count == 1)
             {
-                MessageBox.Show("Вы успешно вошли!", "Успешно!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                FormAdmin formAdmin = new FormAdmin();
-                this.Hide();
-                formAdmin.ShowDialog();
-                this.Show();
+                
+
+                roleId = Convert.ToInt32(table.Rows[0]["Client_status_ID"]);
+
+                    MessageBox.Show("Вы успешно вошли!", "Успешно!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    FormAdmin formAdmin = new FormAdmin(roleId);
+                    this.Hide();
+                    formAdmin.ShowDialog();
+                    this.Show();
+             
+
+
             }
             else
             {
