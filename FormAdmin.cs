@@ -27,6 +27,29 @@ namespace spa_salon
             if (roleId == 2)
             {
                 buttondobav.Visible = false;
+                buttonizmenit.Visible = false;
+                buttondelete.Visible = false;
+                button_dob.Visible = false;
+                button_izmen.Visible = false;
+                button_delet.Visible = false;
+                button_dobav.Visible = false;
+                button_izm.Visible = false;
+                button_del.Visible = false;
+                button_d.Visible = false;
+                button_i.Visible = false;
+                button_de.Visible = false;
+                gb_supply.Visible = false;
+                button_supply.Visible = false;
+                button_clients.Visible = false;
+                button_dobavite.Visible=false;
+                button_izmenite.Visible=false;
+                button_deleete.Visible=false;
+                gb_clients.Visible=false;
+                button_suppliers.Visible=false;
+
+
+
+
             }
         }
         public void Create_colums()
@@ -45,12 +68,9 @@ namespace spa_salon
             dgv_usluga2.Columns.Add("SupplierID", "id поставщика");
             dgv_usluga2.Columns.Add("ClientID", "id клиента");
 
-            dgv_reviews.Columns.Add("ReviewID", "id отзывы");
-            dgv_reviews.Columns.Add("ClientID", "id клиента ");
-            dgv_reviews.Columns.Add("ServiceID", "id услуги");
+            dgv_reviews.Columns.Add("ReviewID", "id отзыва");
             dgv_reviews.Columns.Add("Rating", "Оценка");
             dgv_reviews.Columns.Add("Comment", "Комментарий");
-            dgv_reviews.Columns.Add("ReviewDate", "Дата отзыва");
 
             dgv_employees.Columns.Add("EmployeeID", "id специалиста");
             dgv_employees.Columns.Add("FirstName", "Имя ");
@@ -60,10 +80,10 @@ namespace spa_salon
             dgv_employees.Columns.Add("Email", "Почта");
             dgv_employees.Columns.Add("WorkSchedule", "График работы");
 
-            dgv_supply.Columns.Add("SupplyID", "id специалиста");
-            dgv_supply.Columns.Add("SupplierID", "Имя ");
-            dgv_supply.Columns.Add("SupplyDate", "Фамилия");
-            dgv_supply.Columns.Add("Cost", "Должность");
+            dgv_supply.Columns.Add("SupplyID", "id поставки");
+            dgv_supply.Columns.Add("SupplierID", "id поставщика ");
+            dgv_supply.Columns.Add("SupplyDate", "Дата поставки");
+            dgv_supply.Columns.Add("Cost", "Цена");
 
             dgv_suppliers.Columns.Add("SuppliersID", "id поставщика");
             dgv_suppliers.Columns.Add("CompanyName", "Название компаниии ");
@@ -85,7 +105,7 @@ namespace spa_salon
         {
             if (n ==0) dgw.Rows.Add(record.GetInt32(0), record.GetString(1), record.GetString(2), record.GetInt32(3), record.GetDecimal(4).ToString());
             if (n == 1) dgw.Rows.Add(record.GetInt32(0), record.GetString(1), record.GetString(2), record.GetDecimal(3).ToString(), record.GetInt32(4), record.GetInt32(5), record.GetInt32(6));
-            if (n == 2) dgw.Rows.Add(record.GetInt32(0), record.GetInt32(1), record.GetInt32(2), record.GetInt32(3), record.GetString(4), record.GetDateTime(5));
+            if (n == 2) dgw.Rows.Add(record.GetInt32(0), record.GetInt32(3),record.GetString(4));
             if (n == 3) dgw.Rows.Add(record.GetInt32(0), record.GetString(1), record.GetString(2), record.GetString(3), record.GetString(4), record.GetString(5), record.GetString(6));
             if (n == 4) dgw.Rows.Add(record.GetInt32(0), record.GetInt32(1), record.GetDateTime(2), record.GetDecimal(3).ToString());
             if (n == 5) dgw.Rows.Add(record.GetInt32(0), record.GetString(1), record.GetString(2), record.GetString(3), record.GetString(4));
@@ -120,18 +140,17 @@ namespace spa_salon
 
             gb_uslugi.Visible = true;
             gd_products.Visible = false;
-            gb_reviews.Visible = false;
             gb_employees.Visible = false;
-            dgv_clients.Visible = false;
+            gb_reviews.Visible = true;
+            gb_clients.Visible = false;
         }
 
         private void button_uslugi_Click(object sender, EventArgs e)
         {
             gb_uslugi.Visible = true;
             gd_products.Visible = false;
-            gb_reviews.Visible = false;
             gb_employees.Visible = false;
-            dgv_clients.Visible = false;
+            gb_clients.Visible = false;
 
         }
 
@@ -139,9 +158,8 @@ namespace spa_salon
         {
             gb_uslugi.Visible = false;
             gd_products.Visible = true;
-            gb_reviews.Visible = false;
             gb_employees.Visible = false;
-            dgv_clients.Visible = false;
+            gb_clients.Visible = false;
 
         }
 
@@ -149,9 +167,8 @@ namespace spa_salon
         {
             gb_uslugi.Visible = false;
             gd_products.Visible = false;
-            gb_reviews.Visible = false;
             gb_employees.Visible = true;
-            dgv_clients.Visible = false;
+            gb_clients.Visible = false;
 
         }
 
@@ -160,9 +177,8 @@ namespace spa_salon
         {
             gb_uslugi.Visible = false;
             gd_products.Visible = false;
-            gb_reviews.Visible = false;
             gb_employees.Visible = false;
-            dgv_clients.Visible = true;
+            gb_clients.Visible = true;
         }
 
         private void button_supply_Click(object sender, EventArgs e)
@@ -248,38 +264,104 @@ namespace spa_salon
             read.Close();
         }
 
-        
+        private void Search_c(DataGridView dgv)
+        {
+            dgv.Rows.Clear();
+
+            string searchString = $"select * from [Clients] where concat (ClientsID, FirstName, LastName, ContactPhone, DataofBirth, Login, Password) like '%{textsearch5.Text}%'";
+
+            SqlCommand comment = new SqlCommand(searchString, DB.GetSqlConnection());
+
+            DB.openConnection();
+
+            SqlDataReader read = comment.ExecuteReader();
+
+            while (read.Read())
+            {
+                Read_single_row(dgv, read, 6);
+            }
+
+            read.Close();
+        }
+
+        private void Search_s(DataGridView dgv)
+        {
+            dgv.Rows.Clear();
+
+            string searchString = $"select * from [Supplies] where concat (SupplyID, SupplierID, SupplyDate, Cost) like '%{textsearch6.Text}%'";
+
+            SqlCommand comment = new SqlCommand(searchString, DB.GetSqlConnection());
+
+            DB.openConnection();
+
+            SqlDataReader read = comment.ExecuteReader();
+
+            while (read.Read())
+            {
+                Read_single_row(dgv, read, 4);
+            }
+
+            read.Close();
+        }
+
+        private void Search_ss(DataGridView dgv)
+        {
+            dgv.Rows.Clear();
+
+            string searchString = $"select * from [Suppliers] where concat (SuppliersID, CompanyName, ContactPhone, Email, Address) like '%{textsearch3.Text}%'";
+
+            SqlCommand comment = new SqlCommand(searchString, DB.GetSqlConnection());
+
+            DB.openConnection();
+
+            SqlDataReader read = comment.ExecuteReader();
+
+            while (read.Read())
+            {
+                Read_single_row(dgv, read, 5);
+            }
+
+            read.Close();
+        }
 
         private void textsearch_TextChanged(object sender, EventArgs e)
         {
             Search_t(dgv_usluga);
         }
 
-        private void gb_reviews_Enter(object sender, EventArgs e)
+        private void textsearch2_TextChanged(object sender, EventArgs e)
         {
-
+            Search_y(dgv_usluga2);
         }
 
-        private void button_reviews_Click(object sender, EventArgs e)
+        private void dgv_usluga2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            selected_row = e.RowIndex;
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = dgv_usluga2.Rows[selected_row];
+                label_price2.Text = $"{row.Cells[3].Value.ToString()}₽";
+            }
         }
 
-       
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void textsearch5_TextChanged(object sender, EventArgs e)
         {
-
+            Search_c(dgv_clients);
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void textsearch4_TextChanged(object sender, EventArgs e)
         {
-
+            Search_e(dgv_employees);
         }
 
-        private void label_price_Click(object sender, EventArgs e)
+        private void textsearch6_TextChanged(object sender, EventArgs e)
         {
+            Search_s(dgv_supply);
+        }
 
+        private void textsearch3_TextChanged(object sender, EventArgs e)
+        {
+            Search_ss(dgv_suppliers);
         }
     }
 }
