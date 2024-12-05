@@ -15,6 +15,7 @@ namespace spa_salon
     {
         DB DB = new DB();
         int selected_row;
+        int selected_row_prod;
 
 
         public FormAdmin(int roleId)
@@ -334,15 +335,6 @@ namespace spa_salon
             Search_y(dgv_usluga2);
         }
 
-        private void dgv_usluga2_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            selected_row = e.RowIndex;
-            if (e.RowIndex >= 0)
-            {
-                DataGridViewRow row = dgv_usluga2.Rows[selected_row];
-                label_price2.Text = $"{row.Cells[3].Value.ToString()}₽";
-            }
-        }
 
         private void textsearch5_TextChanged(object sender, EventArgs e)
         {
@@ -362,6 +354,74 @@ namespace spa_salon
         private void textsearch3_TextChanged(object sender, EventArgs e)
         {
             Search_ss(dgv_suppliers);
+        }
+
+        private void label_price2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgv_usluga2_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            selected_row_prod = e.RowIndex;
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = dgv_usluga2.Rows[selected_row_prod];
+                label_price2.Text = $"{row.Cells[3].Value.ToString()}₽";
+            }
+        }
+
+        private void button_delet_Click(object sender, EventArgs e)
+        {
+            Delete_Row();
+        }
+
+        public void Delete_Row()
+        {
+            try
+            {
+                DataGridViewRow row = dgv_usluga2.Rows[selected_row_prod];
+                string query_string = $"delete from products where ProductID={row.Cells[0].Value.ToString()}";
+                SqlCommand command = new SqlCommand(query_string, DB.GetSqlConnection());
+                DB.openConnection();
+                SqlDataReader reader = command.ExecuteReader();
+                reader.Close();
+                Refresh_data_grid(dgv_usluga2, "products", 1);
+            }
+            catch (Exception ex) {
+                MessageBox.Show("hfjbfh");
+            }
+
+        }
+
+        private void button_izmen_Click(object sender, EventArgs e)
+        {
+            DataGridViewRow row = dgv_usluga2.Rows[selected_row_prod];
+            ChangeProduct changeProduct = new ChangeProduct(row, 1);
+            changeProduct.Show();
+            this.Hide();
+
+        }
+
+
+        //private void button_del_Click(object sender, EventArgs e)
+        //{
+        //    DataGridViewRow row = dgv_usluga2.Rows[selected_row_prod];
+        //    ChangeProduct changeProduct = new ChangeProduct(row);
+        //    changeProduct.Show();
+        //    this.Hide();
+        //}
+
+        private void button_dob_Click(object sender, EventArgs e)
+        {
+            DataGridViewRow row = dgv_usluga2.Rows[selected_row_prod];
+            ChangeProduct changeProduct = new ChangeProduct(row, 2);
+            changeProduct.Show();
+            this.Hide();
+        }
+
+        private void button_reviews_Click(object sender, EventArgs e)
+        {
         }
     }
 }

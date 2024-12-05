@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace spa_salon
 {
-    public partial class FormUser : Form
+    public partial class ChangeServices : Form
     {
-        public FormUser()
+        public ChangeServices()
         {
             InitializeComponent();
+        }
+
+        private void ChangeServices_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -79,5 +79,35 @@ namespace spa_salon
         {
 
         }
+
+        private void FirstName_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LastName_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DataOfBirth_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Phone_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Login_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Password_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -14,7 +14,7 @@ namespace spa_salon
     public partial class MainWin : Form
     {
         DB DB = new DB();
-        public int roleId;
+        
 
         public MainWin()
         {
@@ -89,17 +89,13 @@ namespace spa_salon
 
             if (table.Rows.Count == 1)
             {
-                
-
-                roleId = Convert.ToInt32(table.Rows[0]["Client_status_ID"]);
-
+             
                     MessageBox.Show("Вы успешно вошли!", "Успешно!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    FormAdmin formAdmin = new FormAdmin(roleId);
+                    FormAdmin formAdmin = new FormAdmin(Convert.ToInt32(table.Rows[0]["Client_status_ID"]));
                     this.Hide();
                     formAdmin.ShowDialog();
                     this.Show();
              
-
 
             }
             else
