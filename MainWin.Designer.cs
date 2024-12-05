@@ -74,7 +74,7 @@
             this.textlogin.Name = "textlogin";
             this.textlogin.Size = new System.Drawing.Size(239, 20);
             this.textlogin.TabIndex = 2;
-            this.textlogin.TextChanged += new System.EventHandler(this.textlogin_TextChanged);
+           
             // 
             // textpassword
             // 
@@ -93,7 +93,7 @@
             this.login.Size = new System.Drawing.Size(59, 18);
             this.login.TabIndex = 4;
             this.login.Text = "Login";
-            this.login.Click += new System.EventHandler(this.label2_Click);
+         
             // 
             // password
             // 
@@ -138,7 +138,7 @@
             this.lblMessage.Name = "lblMessage";
             this.lblMessage.Size = new System.Drawing.Size(0, 13);
             this.lblMessage.TabIndex = 10;
-            this.lblMessage.Click += new System.EventHandler(this.label2_Click_1);
+            
             // 
             // panel1
             // 

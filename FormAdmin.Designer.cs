@@ -212,7 +212,6 @@
             this.label_price2.Size = new System.Drawing.Size(60, 17);
             this.label_price2.TabIndex = 9;
             this.label_price2.Text = "Цена";
-            this.label_price2.Click += new System.EventHandler(this.label_price2_Click);
             // 
             // button_dob
             // 

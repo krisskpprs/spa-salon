@@ -23,21 +23,6 @@ namespace spa_salon
 
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void textlogin_TextChanged(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void label2_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
         private void MainWin_Load(object sender, EventArgs e)
         {
             textpassword.PasswordChar = '*';
@@ -49,29 +34,6 @@ namespace spa_salon
 
         private void btnvoiti_Click(object sender, EventArgs e)
         {
-            //try
-            //{
-
-            //    string login = textlogin.Text;
-            //    string password = textpassword.Text;
-
-            //    if (login == "admin" && password == "password")
-            //    {
-
-            //        lblMessage.Text = "Login successful!";
-
-            //FormAdmin FormAdmin = new FormAdmin();
-            //FormAdmin.Show();
-            //this.Hide();
-
-            //    }
-            //    else
-            //    {
-            //        lblMessage.Text = "Invalid login or password";
-            //    }
-            //}
-            //catch (Exception ex) {
-            //}
 
             var loginUser = textlogin.Text;
             var loginPassword = textpassword.Text;

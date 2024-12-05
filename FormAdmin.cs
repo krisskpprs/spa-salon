@@ -16,8 +16,6 @@ namespace spa_salon
         DB DB = new DB();
         int selected_row;
         int selected_row_prod;
-
-
         public FormAdmin(int roleId)
         {
             InitializeComponent();
@@ -47,9 +45,6 @@ namespace spa_salon
                 button_deleete.Visible=false;
                 gb_clients.Visible=false;
                 button_suppliers.Visible=false;
-
-
-
 
             }
         }
@@ -100,7 +95,6 @@ namespace spa_salon
             dgv_clients.Columns.Add("Login", "Логин");
             dgv_clients.Columns.Add("Password", "Пароль");
             dgv_clients.Columns.Add("Client_status_ID", "id статуса");
-
         }
         public void Read_single_row(DataGridView dgw, IDataRecord record, int n)
         {
@@ -112,8 +106,6 @@ namespace spa_salon
             if (n == 5) dgw.Rows.Add(record.GetInt32(0), record.GetString(1), record.GetString(2), record.GetString(3), record.GetString(4));
             if (n == 6) dgw.Rows.Add(record.GetInt32(0), record.GetString(1), record.GetString(2), record.GetString(3), record.GetDateTime(4), record.GetString(5), record.GetString(6), record.GetInt32(7));
         }
-
-
         public void Refresh_data_grid(DataGridView dgw, string table, int n)
         {
             dgw.Rows.Clear();
@@ -127,7 +119,6 @@ namespace spa_salon
             }
             reader.Close();
         }
-
         private void FormAdmin_Load(object sender, EventArgs e)
         {
             Create_colums();
@@ -173,7 +164,6 @@ namespace spa_salon
 
         }
 
-
         private void button_clients_Click(object sender, EventArgs e)
         {
             gb_uslugi.Visible = false;
@@ -193,7 +183,6 @@ namespace spa_salon
             gb_supply.Visible = false;
             gb_suplilers.Visible = true;
         }
-        
 
         private void dgv_usluga_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -335,7 +324,6 @@ namespace spa_salon
             Search_y(dgv_usluga2);
         }
 
-
         private void textsearch5_TextChanged(object sender, EventArgs e)
         {
             Search_c(dgv_clients);
@@ -354,11 +342,6 @@ namespace spa_salon
         private void textsearch3_TextChanged(object sender, EventArgs e)
         {
             Search_ss(dgv_suppliers);
-        }
-
-        private void label_price2_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void dgv_usluga2_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -402,15 +385,6 @@ namespace spa_salon
             this.Hide();
 
         }
-
-
-        //private void button_del_Click(object sender, EventArgs e)
-        //{
-        //    DataGridViewRow row = dgv_usluga2.Rows[selected_row_prod];
-        //    ChangeProduct changeProduct = new ChangeProduct(row);
-        //    changeProduct.Show();
-        //    this.Hide();
-        //}
 
         private void button_dob_Click(object sender, EventArgs e)
         {

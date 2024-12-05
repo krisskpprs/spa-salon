@@ -94,7 +94,7 @@ namespace spa_salon
                 formAdmin.Show();
                 this.Hide();
             }
-            catch (Exception ex) { MessageBox.Show("11111"); }
+            catch (Exception ex) { MessageBox.Show("Заполните все поля!"); }
 
 
         }
@@ -102,6 +102,11 @@ namespace spa_salon
         private void button_dobaa_Click(object sender, EventArgs e)
         {
             Add_Row();
+        }
+
+        private void ChangeProduct_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

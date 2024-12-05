@@ -72,7 +72,7 @@
             this.FirstName.Size = new System.Drawing.Size(100, 18);
             this.FirstName.TabIndex = 1;
             this.FirstName.Text = "FirstName";
-            this.FirstName.Click += new System.EventHandler(this.FirstName_Click);
+           
             // 
             // LastName
             // 
@@ -86,7 +86,7 @@
             this.LastName.Size = new System.Drawing.Size(96, 18);
             this.LastName.TabIndex = 2;
             this.LastName.Text = "LastName";
-            this.LastName.Click += new System.EventHandler(this.LastName_Click);
+           
             // 
             // Phone
             // 
@@ -99,7 +99,7 @@
             this.Phone.Size = new System.Drawing.Size(65, 18);
             this.Phone.TabIndex = 3;
             this.Phone.Text = "Phone";
-            this.Phone.Click += new System.EventHandler(this.Phone_Click);
+            
             // 
             // Login
             // 
@@ -111,7 +111,7 @@
             this.Login.Size = new System.Drawing.Size(59, 18);
             this.Login.TabIndex = 4;
             this.Login.Text = "Login";
-            this.Login.Click += new System.EventHandler(this.Login_Click);
+            
             // 
             // Password
             // 
@@ -123,7 +123,7 @@
             this.Password.Size = new System.Drawing.Size(99, 18);
             this.Password.TabIndex = 5;
             this.Password.Text = "Password";
-            this.Password.Click += new System.EventHandler(this.Password_Click);
+            
             // 
             // DataOfBirth
             // 
@@ -135,7 +135,7 @@
             this.DataOfBirth.Size = new System.Drawing.Size(126, 18);
             this.DataOfBirth.TabIndex = 6;
             this.DataOfBirth.Text = "DataOfBirth";
-            this.DataOfBirth.Click += new System.EventHandler(this.DataOfBirth_Click);
+          
             // 
             // textFirstName
             // 
@@ -220,7 +220,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(439, 526);
             this.panel1.TabIndex = 14;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+           
             // 
             // label2
             // 

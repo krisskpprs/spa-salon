@@ -66,48 +66,13 @@ namespace spa_salon
                 if (command.ExecuteNonQuery() == 1)
                 {
                     MessageBox.Show("Вы вошли в аккаунт!");
-                    FormAdmin formAdmin  = new FormAdmin(roleId);
+                    FormAdmin formAdmin = new FormAdmin(roleId);
                     this.Hide();
                     formAdmin.ShowDialog();
                 }
                 else MessageBox.Show("Такого аккаунта нет!");
             }
             DB.closeConnection();
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void FirstName_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void LastName_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void DataOfBirth_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Phone_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Login_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Password_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
